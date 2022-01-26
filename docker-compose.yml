@@ -70,6 +70,9 @@ services:
             NODE_ENV: "production"
             DB_ADAPTER: "postgres"
             DB_URI: "postgresql://kong:kong@kong-ee-database:5432/konga"
+        entrypoint: ""
+        command: >
+            bash -c "sleep 20 && /app/start.sh"
         volumes:
             - "./konga:/app/kongadata"
 networks:
